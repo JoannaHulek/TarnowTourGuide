@@ -1,22 +1,18 @@
 package com.example.joannahulek.tarnowtourguide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import java.util.Arrays;
-import java.util.List;
+import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static List<Location> LOCATIONS = Arrays.asList(
-            new Location("Dworzec PKP", Category.MONUMENT, R.drawable.tarnow_dworzec1),
-            new Location("Cafe Tramwaj", Category.COFFEE_OR_RESTAURANT, R.drawable.cafe_tramwaj_tarnow1),
-            new Location("Wałowa", Category.STREET, R.drawable.tarnow_walowa1),
-            new Location("Rynek", Category.SQUARE, R.drawable.tarnow_rynek1)
-    );
+    public static final LocationsStore LOCATIONS_STORE = new LocationsStore();
+    //private final static List<Location> LOCATIONS = LOCATIONS_STORE.getLocationsArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +20,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        LocationAdapter adapter = new LocationAdapter(this, LOCATIONS);
+        LocationAdapter adapter = new LocationAdapter(this, LOCATIONS_STORE.getLocationsArray());
 
         GridView menuGridView = (GridView) findViewById(R.id.menu);
 
         menuGridView.setAdapter(adapter);
 
         menuGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Location location = LOCATIONS.get(position);
+                Location currentLocation = LOCATIONS_STORE.current(position);
 
-
+                Intent i = new Intent(MainActivity.this, AboutLocationActivity.class);
+                i.putExtra("locationsArray", (Serializable) LOCATIONS_STORE);
+                startActivity(i);
             }
         });
 

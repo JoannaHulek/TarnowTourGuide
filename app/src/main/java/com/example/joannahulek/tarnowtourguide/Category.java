@@ -5,27 +5,23 @@ package com.example.joannahulek.tarnowtourguide;
  */
 
 enum Category {
-    STREET("Ulica"),
-    MONUMENT("Zabytek"),
-    PARK("Park"),
-    SQUARE("Plac"),
-    COFFEE_OR_RESTAURANT("Kawiarnia/Restauracja"),
-    MONUMENT_OF_NATURE("Pomnik Przyrody"),
-    ENTERTAINMENT("Rozrywka"),
-    ACCOMMODATION("Zakwaterowanie"),
-    CITY("Miasto");
+    STREET(R.string.street),
+    MONUMENT(R.string.monument),
+    PARK(R.string.park),
+    SQUARE(R.string.square),
+    COFFEE_OR_RESTAURANT(R.string.coffee_or_restaurant),
+    MONUMENT_OF_NATURE(R.string.monument_of_nature),
+    ENTERTAINMENT(R.string.entertaiment),
+    ACCOMMODATION(R.string.accommodation),
+    CITY(R.string.city);
 
-    private final String displayText;
+    private final int displayText;
 
-    Category(String alternativeText) {
+    Category(int alternativeText) {
         this.displayText = alternativeText;
     }
 
-    Category() {
-        this.displayText = this.name();
-    }
-
-    public String getDisplayText() {
+    public int getDisplayText() {
         return displayText;
     }
 }

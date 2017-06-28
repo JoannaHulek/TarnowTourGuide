@@ -14,5 +14,6 @@
 -->
 <resources>
     <!-- Height of each list item -->
-    <dimen name="menu_item_height">88dp</dimen>
+    <dimen name="menu_item_size">88dp</dimen>
+    <dimen name="about_location_item_size">200dp</dimen>
 </resources>

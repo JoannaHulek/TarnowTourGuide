@@ -2,59 +2,65 @@ package com.example.joannahulek.tarnowtourguide;
 
 import android.util.ArraySet;
 
+import java.io.Serializable;
+
 /**
  * Created by Joasia on 25.06.2017.
  */
 
-public class Location {
+public class Location implements Serializable {
 
-    private final String locationName;
+    private final int locationNameResource;
     private final Category locationCategory;
-    private final int locationImg;
-    private final String aboutLocation;
-    private final String locationCoordinates;
-    private final ArraySet<Integer> additionalLocationImages;
+    private final int locationImageResource;
+    private final int aboutLocationResource;
+    private final int locationCoordinatesResource;
+    private final ArraySet<Integer> additionalImagesResources;
 
-    public Location(String locationName, Category locationCategory, int locationImg) {
-        this.locationName = locationName;
-        this.locationImg = locationImg;
+    public Location(int locationNameResource, Category locationCategory, int locationImageResource) {
+        this.locationNameResource = locationNameResource;
+        this.locationImageResource = locationImageResource;
         this.locationCategory = locationCategory;
-        this.aboutLocation = null;
-        this.locationCoordinates = null;
-        this.additionalLocationImages = null;
+        this.aboutLocationResource = 0;
+        this.locationCoordinatesResource = 0;
+        this.additionalImagesResources = null;
     }
 
-    public Location(String locationName, Category locationCategory, int locationImg, String aboutLocation, String locationCoordinates, ArraySet<Integer> additionalLocationImages) {
-        this.locationName = locationName;
-        this.locationImg = locationImg;
-        this.aboutLocation = aboutLocation;
+    public Location(int locationNameResource, Category locationCategory, int locationImg, int aboutLocationResource) {
+        this.locationNameResource = locationNameResource;
+        this.locationImageResource = locationImg;
+        this.aboutLocationResource = aboutLocationResource;
         this.locationCategory = locationCategory;
-        this.locationCoordinates = locationCoordinates;
-        this.additionalLocationImages = additionalLocationImages;
+        this.locationCoordinatesResource = 0;
+        this.additionalImagesResources = null;
+
+        //, ArraySet<Integer> additionalLocationImages
+        //int locationCoordinatesResource
+        // additionalLocationImages
     }
 
-    public String getLocationName() {
-        return locationName;
+    public int getLocationNameResource() {
+        return locationNameResource;
     }
 
-    public int getLocationImg() {
-        return locationImg;
-    }
-
-    public String getAboutLocation() {
-        return aboutLocation;
+    public int getLocationImageResource() {
+        return locationImageResource;
     }
 
     public Category getLocationCategory() {
         return locationCategory;
     }
 
-    public String getLocationCoordinates() {
-        return locationCoordinates;
+    public int getAboutLocationResource() {
+        return aboutLocationResource;
     }
 
-    public ArraySet<Integer> getAdditionalLocationImages() {
-        return additionalLocationImages;
+    public int getLocationCoordinatesResource() {
+        return locationCoordinatesResource;
+    }
+
+    public ArraySet<Integer> getAdditionalImagesResources() {
+        return additionalImagesResources;
     }
 
 

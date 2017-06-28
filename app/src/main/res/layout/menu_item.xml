@@ -9,14 +9,14 @@
 
     <ImageView
         android:id="@+id/location_image"
-        android:layout_width="@dimen/menu_item_height"
-        android:layout_height="@dimen/menu_item_height"
+        android:layout_width="@dimen/menu_item_size"
+        android:layout_height="@dimen/menu_item_size"
         android:padding="8dp" />
 
     <LinearLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/menu_item_height"
+        android:layout_height="@dimen/menu_item_size"
         android:orientation="vertical">
 
         <TextView

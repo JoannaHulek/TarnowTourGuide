@@ -21,5 +21,4 @@
         android:background="@color/colorPrimary"
         android:padding="8dp"
         android:layout_margin="8dp" />
-
 </LinearLayout>

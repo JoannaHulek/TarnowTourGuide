@@ -20,24 +20,10 @@ public class AboutLocationActivity extends AppCompatActivity {
         final LocationsStore locationsStore = (LocationsStore) savedData.getSerializable("locationsArray");
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        // Create an adapter that knows which fragment should be shown on each page
         AboutLocationFragmentPagerAdapter adapter = new AboutLocationFragmentPagerAdapter(getSupportFragmentManager(), locationsStore.getLocationsArray());
 
-        // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
-
-/*
-        final Location currentLocation = LOCATIONS_STORE.current();
-
-        ImageView locationImage = (ImageView) findViewById(R.id.location_image);
-        TextView locationNameTextView = (TextView) findViewById(R.id.location_name_text_view);
-        TextView locationCategoryTextView = (TextView) findViewById(R.id.location_category_text_view);
-        TextView aboutLocationTextView = (TextView) findViewById(R.id.about_location_text_view);
-
-        locationImage.setImageResource(currentLocation.getLocationImageResource());
-        locationNameTextView.setText(currentLocation.getLocationNameResource());
-        locationCategoryTextView.setText(currentLocation.getLocationCategory().getDisplayText());
-        aboutLocationTextView.setText(currentLocation.getAboutLocationResource());*/
+        viewPager.setCurrentItem(locationsStore.getCurrentPosition());
 
         Button upToMenuButton = (Button) findViewById(R.id.up_to_menu_button);
         final Context context = this;

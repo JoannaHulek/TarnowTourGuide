@@ -7,12 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import java.io.Serializable;
-
 public class MainActivity extends AppCompatActivity {
 
     public static final LocationsStore LOCATIONS_STORE = new LocationsStore();
-    //private final static List<Location> LOCATIONS = LOCATIONS_STORE.getLocationsArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Location currentLocation = LOCATIONS_STORE.current(position);
+                LOCATIONS_STORE.current(position);
 
                 Intent i = new Intent(MainActivity.this, AboutLocationActivity.class);
-                i.putExtra("locationsArray", (Serializable) LOCATIONS_STORE);
+                i.putExtra("locationsArray", LOCATIONS_STORE);
                 startActivity(i);
             }
         });

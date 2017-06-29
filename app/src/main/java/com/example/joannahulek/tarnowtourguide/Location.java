@@ -1,8 +1,7 @@
 package com.example.joannahulek.tarnowtourguide;
 
-import android.util.ArraySet;
-
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by Joasia on 25.06.2017.
@@ -14,54 +13,48 @@ public class Location implements Serializable {
     private final Category locationCategory;
     private final int locationImageResource;
     private final int aboutLocationResource;
-    private final int locationCoordinatesResource;
-    private final ArraySet<Integer> additionalImagesResources;
+    private final String aboutTextSource;
+    private final String locationCoordinates;
+    private final Set<Integer> additionalImagesResources;
 
-    public Location(int locationNameResource, Category locationCategory, int locationImageResource) {
+
+    public Location(int locationNameResource, Category locationCategory, int locationImg, int aboutLocationResource, String aboutTextSource, Set<Integer> additionalLocationImages, String locationCoordinates) {
         this.locationNameResource = locationNameResource;
-        this.locationImageResource = locationImageResource;
         this.locationCategory = locationCategory;
-        this.aboutLocationResource = 0;
-        this.locationCoordinatesResource = 0;
-        this.additionalImagesResources = null;
-    }
-
-    public Location(int locationNameResource, Category locationCategory, int locationImg, int aboutLocationResource) {
-        this.locationNameResource = locationNameResource;
         this.locationImageResource = locationImg;
         this.aboutLocationResource = aboutLocationResource;
-        this.locationCategory = locationCategory;
-        this.locationCoordinatesResource = 0;
-        this.additionalImagesResources = null;
+        this.aboutTextSource = aboutTextSource;
+        this.additionalImagesResources = additionalLocationImages;
+        this.locationCoordinates = locationCoordinates;
 
-        //, ArraySet<Integer> additionalLocationImages
-        //int locationCoordinatesResource
-        // additionalLocationImages
     }
 
     public int getLocationNameResource() {
         return locationNameResource;
     }
 
-    public int getLocationImageResource() {
-        return locationImageResource;
-    }
-
     public Category getLocationCategory() {
         return locationCategory;
+    }
+
+    public int getLocationImageResource() {
+        return locationImageResource;
     }
 
     public int getAboutLocationResource() {
         return aboutLocationResource;
     }
 
-    public int getLocationCoordinatesResource() {
-        return locationCoordinatesResource;
+    public String getAboutTextSource() {
+        return aboutTextSource;
     }
 
-    public ArraySet<Integer> getAdditionalImagesResources() {
+    public String getLocationCoordinates() {
+        return locationCoordinates;
+    }
+
+    public Set<Integer> getAdditionalImagesResources() {
         return additionalImagesResources;
     }
-
 
 }

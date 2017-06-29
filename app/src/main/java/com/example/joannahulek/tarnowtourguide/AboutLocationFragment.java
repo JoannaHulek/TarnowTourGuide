@@ -82,7 +82,6 @@ public class AboutLocationFragment extends Fragment {
     private View createPhotoForId(Integer integer) {
         ImageView galleryPhoto = new ImageView(getContext());
         galleryPhoto.setImageResource(integer);
-
         galleryPhoto.setPadding(8, 8, 8, 8);
         return galleryPhoto;
     }

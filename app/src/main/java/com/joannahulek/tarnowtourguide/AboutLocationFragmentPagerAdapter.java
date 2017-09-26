@@ -1,4 +1,4 @@
-package com.example.joannahulek.tarnowtourguide;
+package com.joannahulek.tarnowtourguide;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

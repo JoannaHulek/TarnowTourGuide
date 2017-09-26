@@ -1,4 +1,4 @@
-package com.example.joannahulek.tarnowtourguide;
+package com.joannahulek.tarnowtourguide;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.example.joannahulek.tarnowtourguide;
+package com.joannahulek.tarnowtourguide;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,6 +13,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.joannahulek.tarnowtourguide.R;
 
 /**
  * Created by Joasia on 27.06.2017.

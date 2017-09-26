@@ -1,4 +1,4 @@
-package com.example.joannahulek.tarnowtourguide;
+package com.joannahulek.tarnowtourguide;
 
 /**
  * Created by Joasia on 25.06.2017.

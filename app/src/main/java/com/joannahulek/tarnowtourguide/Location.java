@@ -1,4 +1,4 @@
-package com.example.joannahulek.tarnowtourguide;
+package com.joannahulek.tarnowtourguide;
 
 import java.io.Serializable;
 import java.util.Set;

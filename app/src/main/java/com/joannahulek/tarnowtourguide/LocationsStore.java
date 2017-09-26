@@ -1,4 +1,6 @@
-package com.example.joannahulek.tarnowtourguide;
+package com.joannahulek.tarnowtourguide;
+
+import com.joannahulek.tarnowtourguide.R;
 
 import java.io.Serializable;
 import java.util.Arrays;
